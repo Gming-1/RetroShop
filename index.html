@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="RetroShop vente de jeux vidéo, consoles, accessoires">
+<title>RetroShop - Vente de jeux vidéo, consoles, accessoires</title>
+<link rel="stylesheet" href="style/index.css">
+</head>
+
+<body>
+  <nav>
+    <a href="index.html">
+  <img src="images/retroshop.png" alt="Logo RetroShop" class="logo-image">
+</a>
+
+    <ul class="nav-liens" >
+      <li><a href="index.html" class="actif">ACCUEIL</a></li>
+      <li><a href="content/produits.html">PRODUITS</a></li>
+      <li><a href="content/contactus.html">CONTACT</a></li>
+    </ul>
+
+    <ul class="nav-connexion">
+    <li><a href="content/connexion.html">CONNEXION</a></li>
+    <li><a href="content/inscription.html">INSCRIPTION</a></li>
+    </ul>
+
+   <div class="nav-panier">
+      <a href="content/panier.html">
+        <span class="icone-panier">🛒</span>
+        <span class="badge-panier" id="badge-panier" style="display:none;">0</span>
+      </a>
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-tag"> RETROP SHOP </div>
+
+    <h1>
+      REVIVEZ LA MAGIE<br/>
+      DES <span>JEUX RÉTRO</span>
+    </h1>
+
+    <p>
+      Découvrez notre collection de consoles de jeux vidéos vintage
+                Plusieurs variétés disponibles
+    </p>
+
+    <a href="content/produits.html" class="btn btn-principal">VOIR LES PRODUITS</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="content/inscription.html" class="btn btn-secondaire">CRÉER UN COMPTE</a>
+  </section>
+
+
+
+  <section class="section-fonctionnalites">
+    <div class="section" style="padding-top: 2rem; padding-bottom: 2rem;">
+      <h2 class="section-titre">POURQUOI NOUS CHOISIR ?</h2>
+      <p class="section-sous-titre">Le meilleur de l'authenticité rétro</p>
+
+      <div class="grille-fonctionnalites">
+
+        <div class="carte-fonctionnalite">
+            <span class="fonctionnalite-icone"><img src="images/auth.png" alt="Livraison sécurisée" onmouseover="this.src='images/auth.gif'" onmouseout="this.src='images/auth.png'"></span>
+          <h3 class="fonctionnalite-titre">100% AUTHENTIQUE</h3>
+          <p style="color: var(--couleur-texte-doux);">
+            Chaque console est vérifiée et certifiée originale par nos experts rétro.
+          </p>
+        </div>
+
+        <div class="carte-fonctionnalite">
+          <span class="fonctionnalite-icone"><img src="images/box1.png" alt="Livraison sécurisée" style="width: 50%; height:20%;" onmouseover="this.src='images/box.gif'" onmouseout="this.src='images/box1.png'"></span>
+          <h3 class="fonctionnalite-titre">LIVRAISON SÉCURISÉE</h3>
+          <p style="color: var(--couleur-texte-doux);">
+            Emballage protecteur spécial pour les pièces fragiles et précieuses.
+          </p>
+        </div>
+
+
+        <div class="carte-fonctionnalite">
+          <span class="fonctionnalite-icone"><img src="images/safe.png" alt="Livraison sécurisée" onmouseover="this.src='images/safe.gif'" onmouseout="this.src='images/safe.png'"></span>
+          <h3 class="fonctionnalite-titre">GARANTIE 30 JOURS</h3>
+          <p style="color: var(--couleur-texte-doux);">
+            Satisfait ou remboursé. Votre confiance est notre priorité.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-contenu">
+      <div class="footer-section">
+        <h3>RETROSHOP</h3>
+        <p>Votre boutique en ligne spécialisée dans les consoles de jeux vidéo vintage.</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>NAVIGATION</h3>
+        <a href="index.html">Accueil</a>
+        <a href="content/produits.html">Produits</a>
+        <a href="content/contactus.html">Contact</a>
+      </div>
+
+      <div class="footer-section">
+        <h3>CONTACT</h3>
+        <p>📧 contact@retroshop.dz</p>
+        <p>📞 +213 555 123 456</p>
+        <p>📍 Tizi Ouzou, Algérie</p>
+      </div>
+    </div>
+
+    <div class="footer-bas">
+      <p>2026 RetroShop</p>
+    </div>
+  </footer>
+
+  <script src="javascript/compteur_panier.js"></script>
+  <script src="javascript/navco.js"></script>
+
+</body>
+</html>

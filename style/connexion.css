@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap');
+
+*{
+  --couleur-fond:        #0d0d1a;
+  --couleur-fond-carte:  #1a1a2e;
+  --couleur-fond-nav:    #0d0d1a;
+  --couleur-jaune:      #f7c948;      
+  --couleur-vert:        #4ade80;      
+  --couleur-rouge:       #f87171;
+  --couleur-texte:       #e2e8f0;
+  --couleur-texte-clair:  #94a3b8;
+  --couleur-bordure:     #2e2e4d;
+  --police-pixel:        'Press Start 2P', monospace;
+  --police-retro:        'VT323', monospace;
+  --ombre-carte:         0 4px 20px #f7c94826;
+  --rayon:               4px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte);
+  font-family: var(--police-retro);
+  font-size: 20px;
+  line-height: 1.6;
+  background-size: 32px 32px;
+}
+
+
+nav {
+  background-color: var(--couleur-fond-nav);
+  border-bottom: 3px solid var(--couleur-jaune);
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+}
+
+.nav-logo {
+  font-family: var(--police-pixel);
+  font-size: 0.75rem;
+  color: var(--couleur-jaune);
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.nav-logo span {
+  color: var(--couleur-vert);
+}
+
+.nav-liens {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-left: 20rem;
+}
+
+.nav-liens a,
+.nav-panier a,
+.nav-connexion a {
+  color: var(--couleur-texte);
+  text-decoration: none;
+  font-family: var(--police-pixel);
+  font-size: 0.55rem;
+  letter-spacing: 1px;
+  padding: 6px 10px;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.nav-connexion {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-panier a:hover,
+.nav-panier a.actif,
+.nav-liens a:hover,
+.nav-liens a.actif,
+.nav-connexion a:hover,
+.nav-connexion a.actif {
+  color: var(--couleur-jaune);
+  border-color: var(--couleur-jaune);
+}
+
+.nav-panier {
+  position: relative;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.icone-panier {
+  font-size: 1.05rem;
+}
+
+.btn {
+  display: inline-block;
+  font-family: var(--police-pixel);
+  font-size: 0.55rem;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.15s ease;
+  image-rendering: pixelated;
+}
+
+
+.btn-principal {
+  background-color: var(--couleur-jaune);
+  color: var(--couleur-fond);
+  border: 3px solid var(--couleur-jaune);
+  box-shadow: 4px 4px 0px #a88a1c;
+}
+
+.btn-principal:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #a88a1c;
+}
+
+.btn-principal:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #a88a1c;
+}
+
+.form-container {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.form-boite {
+  background-color: var(--couleur-fond-carte);
+  border: 2px solid var(--couleur-bordure);
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+}
+
+.form-titre {
+  font-family: var(--police-pixel);
+  font-size: 0.8rem;
+  color: var(--couleur-jaune);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  line-height: 1.8;
+}
+
+.form-sous-titre {
+  text-align: center;
+  color: var(--couleur-texte-doux);
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+
+.form-groupe {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--police-pixel);
+  font-size: 0.45rem;
+  color: var(--couleur-texte-doux);
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.form-champ {
+  width: 100%;
+  background-color: var(--couleur-fond);
+  border: 2px solid var(--couleur-bordure);
+  color: var(--couleur-texte);
+  font-family: var(--police-retro);
+  font-size: 1.2rem;
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-champ:focus {
+  border-color: var(--couleur-jaune);
+  box-shadow: 0 0 10px rgba(247, 201, 72, 0.2);
+}
+
+.form-champ::placeholder {
+  color: var(--couleur-bordure);
+}
+
+.form-lien {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--couleur-texte-doux);
+}
+
+.form-lien a {
+  color: var(--couleur-jaune);
+  text-decoration: none;
+}
+
+.form-lien a:hover {
+  text-decoration: underline;
+}
+
+.form-erreur {
+  color: var(--couleur-rouge);
+  font-family: var(--police-pixel);
+  font-size: 0.4rem;
+  margin-top: 0.4rem;
+  display: none;
+}
+
+footer {
+  background-color: var(--couleur-fond-nav);
+  border-top: 2px solid var(--couleur-bordure);
+  padding: 2rem 2rem 2rem;
+  margin-top: 4rem;
+}
+
+.footer-contenu {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  font-family: var(--police-pixel);
+  font-size: 0.55rem;
+  color: var(--couleur-jaune);
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.footer-section p,
+.footer-section a {
+  color: var(--couleur-texte-clair);
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.footer-section a:hover {
+  color: var(--couleur-jaune);
+}
+
+.footer-bas {
+  border-top: 2px solid var(--couleur-bordure);
+  padding-top: 1.5rem;
+  text-align: center;
+  color: var(--couleur-texte-clair);
+  font-family: var(--police-pixel);
+  font-size: 0.4rem;
+  line-height: 2;
+}
+
+@media (max-width: 768px) {
+  .nav-liens {
+    display: none; 
+  }
+}

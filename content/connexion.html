@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="RetroShop vente de jeux vidéo, consoles, accessoires">
+<title>Connexion - RetroShop</title>
+<link rel="stylesheet" href="../style/connexion.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">
+      <img src="../images/retroshop.png" alt="Logo RetroShop" class="logo-image">
+    </a>
+
+    <ul class="nav-liens">
+      <li><a href="../index.html">ACCUEIL</a></li>
+      <li><a href="produits.html">PRODUITS</a></li>
+      <li><a href="contactus.html">CONTACT</a></li>
+    </ul>
+
+     <ul class="nav-connexion">
+    <li><a href="connexion.html" class="actif">CONNEXION</a></li>
+    <li><a href="inscription.html">INSCRIPTION</a></li>
+    </ul>
+
+    <div class="nav-panier">
+      <a href="panier.html">
+        <span class="icone-panier">🛒</span>
+        <span class="badge-panier" id="badge-panier" style="display:none;">0</span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="form-container">
+    <div class="form-boite">
+      <h1 class="form-titre">SE CONNECTER</h1>
+      <p class="form-sous-titre">Accédez à votre compte RetroShop</p>
+      <form onsubmit="return validerConnexion()">
+        <div class="form-groupe">
+          <label class="form-label" for="email">ADRESSE EMAIL</label>
+          <input class="form-champ" type="email" id="email" name="email" placeholder="exemple@email.com" />
+          <span class="form-erreur" id="erreur-email"></span>
+        </div>
+
+        <div class="form-groupe">
+          <label class="form-label" for="motdepasse">MOT DE PASSE</label>
+          <input class="form-champ" type="password" id="motdepasse" name="motdepasse" placeholder="••••••••" />
+          <span class="form-erreur" id="erreur-motdepasse"></span>
+        </div>
+
+        <button type="submit" class="btn btn-principal" style="width: 100%;">
+          SE CONNECTER
+        </button>
+      </form>
+
+      <div class="form-lien">
+        Pas encore de compte ?
+        <a href="inscription.html">Créer un compte</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-contenu">
+      <div class="footer-section">
+        <h3>RETROSHOP</h3>
+        <p>Votre boutique en ligne spécialisée dans les consoles de jeux vidéo vintage.</p>
+      </div>
+      <div class="footer-section">
+        <h3>NAVIGATION</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="produits.html">Produits</a>
+        <a href="contactus.html">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h3>CONTACT</h3>
+        <p>📧 contact@retroshop.dz</p>
+        <p>📞 +213 555 123 456</p>
+        <p>📍 Tizi Ouzou, Algérie</p>
+      </div>
+    </div>
+    <div class="footer-bas">
+      <p>2026 RetroShop</p>
+    </div>
+  </footer>
+
+  <script src="../javascript/compteur_panier.js"></script>
+  <script src="../javascript/connexion.js"></script>
+  <script src="../javascript/navco.js"></script>
+  
+</body>
+</html>

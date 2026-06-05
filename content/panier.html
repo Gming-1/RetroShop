@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RetroShop vente de jeux vidéo, consoles, accessoires">
+  <title>Panier - RetroShop</title>
+  <link rel="stylesheet" href="../style/panier.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">
+      <img src="../images/retroshop.png" alt="Logo RetroShop" class="logo-image">
+    </a>
+
+    <ul class="nav-liens">
+      <li><a href="../index.html">ACCUEIL</a></li>
+      <li><a href="produits.html">PRODUITS</a></li>
+      <li><a href="contactus.html">CONTACT</a></li>
+    </ul>
+
+    <ul class="nav-connexion">
+      <li><a href="connexion.html">CONNEXION</a></li>
+      <li><a href="inscription.html">INSCRIPTION</a></li>
+    </ul>
+
+    <div class="nav-panier">
+      <a href="panier.html">
+        <span class="icone-panier">🛒</span>
+        <span class="badge-panier" id="badge-panier" style="display:none;">0</span>
+      </a>
+    </div>
+  </nav>
+
+  <section class="panier">
+
+    <h1>VOTRE PANIER</h1>
+
+    <div class="cart-items" id="cart-items">
+    </div>
+
+    <div class="panier-vide" id="panier-vide" style="display:none;">
+      <p>Votre panier est vide.</p>
+      <a href="produits.html" class="btn btn-principal">VOIR LES PRODUITS</a>
+    </div>
+
+    <div class="total" id="bloc-total">
+      <h2>Total : <span class="total-price" id="total-price">0</span> DA</h2>
+      <div class="cart-buttons">
+        <button class="btn-vider" onclick="viderPanier()">Vider le panier</button>
+        <button class="btn-commander" onclick="afficherFormulaire()">Commander</button>
+      </div>
+    </div>
+
+    <div id="zone-formulaire" style="display:none;">
+      <h2>Formulaire de livraison</h2>
+
+      <form id="form-confirmation" novalidate>
+
+        <div class="form-groupe">
+          <input type="text" id="prenom" placeholder="Prénom">
+          <span class="form-erreur" id="error-prenom"></span>
+        </div>
+
+        <div class="form-groupe">
+          <input type="text" id="nom" placeholder="Nom">
+          <span class="form-erreur" id="error-nom"></span>
+        </div>
+
+        <div class="form-groupe">
+          <input type="email" id="email" placeholder="Adresse e-mail">
+          <span class="form-erreur" id="error-email"></span>
+        </div>
+
+        <div class="form-groupe">
+          <input type="tel" id="telephone" placeholder="05 xx xx xx xx" maxlength="10">
+          <span class="form-erreur" id="error-telephone"></span>
+        </div>
+
+        <div class="form-groupe">
+          <select id="wilaya">
+            <option value="">-- Wilaya --</option>
+            <option value="01">01 - Adrar</option>
+            <option value="02">02 - Chlef</option>
+            <option value="03">03 - Laghouat</option>
+            <option value="04">04 - Oum El Bouaghi</option>
+            <option value="05">05 - Batna</option>
+            <option value="06">06 - Béjaïa</option>
+            <option value="07">07 - Biskra</option>
+            <option value="08">08 - Béchar</option>
+            <option value="09">09 - Blida</option>
+            <option value="10">10 - Bouira</option>
+            <option value="11">11 - Tamanrasset</option>
+            <option value="12">12 - Tébessa</option>
+            <option value="13">13 - Tlemcen</option>
+            <option value="14">14 - Tiaret</option>
+            <option value="15">15 - Tizi Ouzou</option>
+            <option value="16">16 - Alger</option>
+            <option value="17">17 - Djelfa</option>
+            <option value="18">18 - Jijel</option>
+            <option value="19">19 - Sétif</option>
+            <option value="20">20 - Saïda</option>
+            <option value="21">21 - Skikda</option>
+            <option value="22">22 - Sidi Bel Abbès</option>
+            <option value="23">23 - Annaba</option>
+            <option value="24">24 - Guelma</option>
+            <option value="25">25 - Constantine</option>
+            <option value="26">26 - Médéa</option>
+            <option value="27">27 - Mostaganem</option>
+            <option value="28">28 - M'Sila</option>
+            <option value="29">29 - Mascara</option>
+            <option value="30">30 - Ouargla</option>
+            <option value="31">31 - Oran</option>
+            <option value="32">32 - El Bayadh</option>
+            <option value="33">33 - Illizi</option>
+            <option value="34">34 - Bordj Bou Arreridj</option>
+            <option value="35">35 - Boumerdès</option>
+            <option value="36">36 - El Tarf</option>
+            <option value="37">37 - Tindouf</option>
+            <option value="38">38 - Tissemsilt</option>
+            <option value="39">39 - El Oued</option>
+            <option value="40">40 - Khenchela</option>
+            <option value="41">41 - Souk Ahras</option>
+            <option value="42">42 - Tipaza</option>
+            <option value="43">43 - Mila</option>
+            <option value="44">44 - Aïn Defla</option>
+            <option value="45">45 - Naâma</option>
+            <option value="46">46 - Aïn Témouchent</option>
+            <option value="47">47 - Ghardaïa</option>
+            <option value="48">48 - Relizane</option>
+            <option value="49">49 - Timimoun</option>
+            <option value="50">50 - Bordj Badji Mokhtar</option>
+            <option value="51">51 - Ouled Djellal</option>
+            <option value="52">52 - Béni Abbès</option>
+            <option value="53">53 - In Salah</option>
+            <option value="54">54 - In Guezzam</option>
+            <option value="55">55 - Touggourt</option>
+            <option value="56">56 - Djanet</option>
+            <option value="57">57 - El M'Ghair</option>
+            <option value="58">58 - El Meniaa</option>
+          </select>
+          <span class="form-erreur" id="error-wilaya"></span>
+        </div>
+
+        <div class="form-groupe">
+          <input type="text" id="adresse" placeholder="Adresse complète">
+          <span class="form-erreur" id="error-adresse"></span>
+        </div>
+
+        <fieldset>
+          <legend>MODE DE PAIEMENT</legend>
+          <label>
+            <input type="radio" name="paiement" value="livraison" checked>
+            Paiement à la livraison
+          </label>
+          <label>
+            <input type="radio" name="paiement" value="cib">
+            CIB / Dahabia
+          </label>
+        </fieldset>
+
+        <button type="submit" class="btn-commander">Confirmer la commande</button>
+
+      </form>
+    </div>
+
+  </section>
+
+  <footer>
+    <div class="footer-contenu">
+      <div class="footer-section">
+        <h3>RETROSHOP</h3>
+        <p>Votre boutique en ligne spécialisée dans les consoles de jeux vidéo vintage.</p>
+      </div>
+      <div class="footer-section">
+        <h3>NAVIGATION</h3>
+        <a href="../index.html">Accueil</a>
+        <a href="produits.html">Produits</a>
+        <a href="contactus.html">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h3>CONTACT</h3>
+        <p>📧 contact@retroshop.dz</p>
+        <p>📞 +213 555 123 456</p>
+        <p>📍 Tizi Ouzou, Algérie</p>
+      </div>
+    </div>
+    <div class="footer-bas">
+      <p>2026 RetroShop</p>
+    </div>
+  </footer>
+
+  <script src="../javascript/panier.js"></script>
+  <script src="../javascript/compteur_panier.js"></script>
+  <script src="../javascript/navco.js"></script>
+  
+</body>
+</html>
