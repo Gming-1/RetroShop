@@ -7,8 +7,7 @@
 
 ## Présentation du projet
 
-**RetroShop** est un site e-commerce spécialisé dans la vente de consoles, jeux vidéo et accessoires vintage.  
-Il a été conçu et développé entièrement en HTML, CSS et JavaScript .
+**RetroShop** est un site e-commerce spécialisé dans la vente de consoles,il a été conçu et développé entièrement en HTML, CSS et JavaScript.
 
 ---
 
