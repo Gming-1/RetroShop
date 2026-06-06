@@ -1,3 +1,4 @@
+// fonction de validation du formulaire de connexion sous systeme regex
 function validerConnexion() {
   var email = document.getElementById("email").value.trim();
   var motdepasse = document.getElementById("motdepasse").value;
@@ -52,6 +53,7 @@ function validerConnexion() {
   return false;
 }
 
+// affichage des messages d'erreur
 function afficherErreur(id, message) {
   var el = document.getElementById(id);
   el.textContent = message;

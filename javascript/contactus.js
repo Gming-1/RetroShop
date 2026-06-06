@@ -1,4 +1,4 @@
-
+// fonction de validation du formulaire de contact sous systeme regex
 function validerContact() {
   var nom     = document.getElementById("nomComplet").value.trim();
   var email   = document.getElementById("email").value.trim();
@@ -34,7 +34,7 @@ function validerContact() {
 
   return valide;
 }
-
+// on gestionne l'envoie du formulaire de contact 
 document.addEventListener("DOMContentLoaded", function () {
   var formulaire = document.getElementById("formulaireContact");
 
@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var btnTexte = document.getElementById("btnTexte");
     var btnChargement = document.getElementById("btnChargement");
 
+    // une petite simulation de l'envoie du message 
     btnEnvoyer.disabled = true;
     if (btnTexte) btnTexte.style.display = "none";
     if (btnChargement) btnChargement.style.display = "inline";
@@ -66,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// fonction d'affichage des messages d'erreur
 function afficherErreur(id, message) {
   var el = document.getElementById(id);
   if (el) {

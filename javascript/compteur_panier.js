@@ -1,3 +1,4 @@
+// on affiche le nombre d'articles dans le panier en utilisant le localStorage
 document.addEventListener("DOMContentLoaded", function () {
     var panier = JSON.parse(localStorage.getItem("panier")) || [];
     var badge = document.getElementById("badge-panier");

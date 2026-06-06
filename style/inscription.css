@@ -1,5 +1,7 @@
+/* import de la police */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap');
 
+/* declaration des var pour faciliter le travail*/
 *{
   --couleur-fond:        #0d0d1a;
   --couleur-fond-carte:  #1a1a2e;
@@ -272,6 +274,7 @@ footer {
   display: none;
 }
 
+/* RESPONSIVE */
 
 @media (max-width: 768px) {
   .nav-liens {

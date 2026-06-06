@@ -1,3 +1,4 @@
+// fonction validation du formulaire d'inscription selon les règles de chaque champs (on a utilisé systeme regex)
 function validerInscription() {
   var prenom = document.getElementById("prenom").value.trim();
   var nom = document.getElementById("nom").value.trim();
@@ -46,7 +47,7 @@ function validerInscription() {
   if (!valide) {
     return false;
   }
-
+  // utilisation du local storage pour stocker les utilisateurs
   var utilisateursStr = localStorage.getItem("utilisateurs");
   var utilisateurs = utilisateursStr ? JSON.parse(utilisateursStr) : [];
 
@@ -56,7 +57,7 @@ function validerInscription() {
       return false;
     }
   }
-
+// on cree un objet si tout marche bien
   var nouvelUtilisateur = {
     prenom: prenom,
     nom: nom,
@@ -72,7 +73,7 @@ function validerInscription() {
 
   return false;
 }
-
+// fonction d'affichage d'erreurs
 function afficherErreur(id, message) {
   var el = document.getElementById(id);
   el.textContent = message;

@@ -1,13 +1,15 @@
-var panier = JSON.parse(localStorage.getItem("panier")) || [];
 
+// récuperer le panier depuis le localstorage
+var panier = JSON.parse(localStorage.getItem("panier")) || [];
+//Fonction pour sauvegarder le panier localement et le mettre à jour 
 function sauvegarder() {
   localStorage.setItem("panier", JSON.stringify(panier));
   mettreAJourBadge();
 }
-
+// Afficher le panier au chargement de la page
 document.addEventListener("DOMContentLoaded", function () {
   afficherPanier();
-
+// récup l'ID du formulaire et quand il est soumis, on confirme la commande si le formulaire est validé
   var form = document.getElementById("form-confirmation");
   if (form) {
     form.addEventListener("submit", function (e) {
@@ -19,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+//fonction qui cache ou affiche le formulaire selon sa longueur
 function afficherPanier() {
   var container = document.getElementById("cart-items");
   var blocTotal = document.getElementById("bloc-total");
@@ -37,6 +40,7 @@ function afficherPanier() {
   panierVide.style.display = "none";
   blocTotal.style.display = "block";
 
+  //On calcule le total de chaque article et affiche un bouton supprimer et affiche le total final
   var total = 0;
   for (var i = 0; i < panier.length; i++) {
     total += panier[i].prix;
@@ -56,18 +60,21 @@ function afficherPanier() {
   document.getElementById("total-price").textContent = total.toLocaleString();
 }
 
+// fonction de suppression d'article portant l'index de splice() et sauvegarder le formulaire et affichage
 function supprimerArticle(index) {
   panier.splice(index, 1);
   sauvegarder();
   afficherPanier();
 }
 
+// fonction vider , sauvegarder et afficher le panier
 function viderPanier() {
   panier = [];
   sauvegarder();
   afficherPanier();
 }
 
+//fonction pour afficher le formulaire et le rendre visible 
 function afficherFormulaire() {
   var zoneForm = document.getElementById("zone-formulaire");
   if (zoneForm) {
@@ -76,6 +83,7 @@ function afficherFormulaire() {
   }
 }
 
+// Fonction validation du formulaire selon les règles de chaque champs (on a utilisé systeme regex)
 function validerFormulaire() {
   var prenom    = document.getElementById("prenom").value.trim();
   var nom       = document.getElementById("nom").value.trim();
@@ -105,11 +113,13 @@ function validerFormulaire() {
   return valide;
 }
 
+//Fonction d'affichage d'erreurs selon le champ formulaire concerné
 function afficherErreur(id, message) {
   var el = document.getElementById(id);
   if (el) { el.textContent = message; el.style.display = "block"; }
 }
 
+//Fonction de confirmation de la commande qui envoie un message de confirmation via alert() et sauvegarder le formulaire
 function confirmerCommande() {
   panier = [];
   sauvegarder();
@@ -117,6 +127,7 @@ function confirmerCommande() {
   window.location.href = "../index.html";
 }
 
+//Fonction pour mettre à jour le badge en le cachant ou l'afficher selon la longueur du panier
 function mettreAJourBadge() {
   var badge = document.getElementById("badge-panier");
   if (badge) {

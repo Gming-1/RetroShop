@@ -1,4 +1,4 @@
-// ================= PRODUITS =================
+// Les produits
 const produits = [
     { id: 1, nom: "Nintendo NES",        prix: 9000,  categorie: "nintendo", image:"../images/nintendo-nes.png", },
     { id: 2, nom: "Super Nintendo",      prix: 8000,  categorie: "nintendo", image:"../images/super-nintendo.png" },
@@ -12,8 +12,10 @@ const produits = [
     { id:10, nom: "Atari Lynx",          prix: 20000,  categorie: "atari",    image:"../images/atari-lynx.png" },
 ];
 
+// on récup le panier du local storage
 let panier = JSON.parse(localStorage.getItem("panier")) || [];
 
+// fonction qui affiche les produits avec leurs infos
 function afficherProduits(liste) {
     const container = document.getElementById("grille-produits");
     container.innerHTML = "";
@@ -32,6 +34,7 @@ function afficherProduits(liste) {
     });
 }
 
+// fonct qui filtre les produits selon la catégorie
 function filtrerProduits(bouton, categorie) {
     document.querySelectorAll(".filtre-btn").forEach(b => b.classList.remove("actif"));
     bouton.classList.add("actif");
@@ -43,6 +46,7 @@ function filtrerProduits(bouton, categorie) {
     }
 }
 
+//Pour chercher les produits selon la saisie de l'utilisateur et mettre à jour le badge du panier
 document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("searchInput");
     if (searchInput) {
@@ -57,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updatePanierCount();
 });
 
+// fonct qui ajoute les produits au panier et les sauvegarde dans localstorage et affiche un message confirmation
 function ajouterPanier(id) {
     const produit = produits.find(p => p.id === id);
     panier.push(produit);
@@ -65,6 +70,7 @@ function ajouterPanier(id) {
     alert(produit.nom + " ajouté au panier !");
 }
 
+// fonct qui met à jour le nombres d'articles affichés dans le compteur et le badge panier
 function updatePanierCount() {
     const el = document.getElementById("cartCount");
     if (el) el.textContent = panier.length;
