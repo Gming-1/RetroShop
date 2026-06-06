@@ -106,7 +106,7 @@ function validerFormulaire() {
   if (prenom.length < 2) { afficherErreur("error-prenom", "Le prénom est obligatoire."); valide = false; }
   if (nom.length < 2)    { afficherErreur("error-nom", "Le nom est obligatoire."); valide = false; }
   if (!regexEmail.test(email))  { afficherErreur("error-email", "Adresse email invalide (ex: exemple@gmail.com)."); valide = false; }
-  if (!regexTel.test(telephone)) { afficherErreur("error-telephone", "10 chiffres, commence par 02, 05, 06 ou 07."); valide = false; }
+  if (!regexTel.test(telephone)) { afficherErreur("error-telephone", "10 chiffres, commence par 02, 05, 06 ou 07."); valide = false; } // 02 pour les telephones fixes
   if (wilaya === "")    { afficherErreur("error-wilaya", "La wilaya est obligatoire."); valide = false; }
   if (adresse.length < 5) { afficherErreur("error-adresse", "L'adresse complète est obligatoire."); valide = false; }
 
