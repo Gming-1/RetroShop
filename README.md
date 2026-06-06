@@ -21,8 +21,6 @@
 
 ---
 
-## Technologies utilisées
-
 - **HTML5** : structure et sémantique des pages
 - **CSS3** : mise en page, design responsive, animations
 - **JavaScript** : interactions, gestion du panier
