@@ -60,7 +60,7 @@ RetroShop/
 ### 1. Lancer le site en local
 
 Ouvrir le fichier `index.html` directement dans un navigateur (Google Chrome ou Firefox recommandé).  
-Aucune installation ni serveur local n'est nécessaire.
+Ou il suffit d'entrer dans le site https://retropshop.netlify.app
 
 ---
 
