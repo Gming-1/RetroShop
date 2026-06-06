@@ -1,4 +1,4 @@
-# RetroShop — Site de vente de Consoles Vintage
+# RetroShop - Site de vente de Consoles Vintage
 
 - Projet réalisé dans le cadre du module **Développement Web**
 - Licence 2 Informatique - Année universitaire 2025/2026
