@@ -67,7 +67,7 @@ Ou il suffit d'entrer dans le site https://retropshop.netlify.app
 ### 2. Parcourir le catalogue
 
 La page **Produits** affiche l'ensemble de consoles disponible.
-Elle dispose de bouton pour trier les consoles en dependant de la société qui les a crée.
+Elle dispose de boutons pour trier les consoles en dependant de la société qui les a crée.
 
 ---
 
